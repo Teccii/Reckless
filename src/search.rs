@@ -466,6 +466,10 @@ fn search<NODE: NodeType>(
             depth += 1;
         }
 
+        if reduction >= 4500 && eval_delta < -200 {
+            depth += 1;
+        }
+
         if !tt_pv && depth >= 2 && reduction > 0 && eval_delta > 59 {
             depth -= 1;
         }
